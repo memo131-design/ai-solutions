@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Packaging System - Revolutioniere dein E-Commerce</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f7fafc;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            padding: 100px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.05) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #3182ce;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 25px rgba(49, 130, 206, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(49, 130, 206, 0.4);
+            background: #2c5aa0;
+        }
+
+        /* Problem Section */
+        .problem {
+            background: #f7fafc;
+            padding: 80px 60px;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2d3748;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #718096;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .problem-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .problem-icon {
+            width: 60px;
+            height: 60px;
+            background: #fed7d7;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+        }
+
+        .problem-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+
+        .problem-card p {
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        /* Solution Section */
+        .solution {
+            background: white;
+            padding: 80px 60px;
+        }
+
+        .solution-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .solution-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2d3748;
+        }
+
+        .solution-text p {
+            font-size: 1.2rem;
+            color: #718096;
+            margin-bottom: 30px;
+        }
+
+        .solution-features {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .solution-features li {
+            padding: 12px 0;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            color: #4a5568;
+        }
+
+        .solution-features li::before {
+            content: '✓';
+            margin-right: 15px;
+            font-size: 1.2rem;
+            color: #3182ce;
+            font-weight: bold;
+            width: 20px;
+            text-align: center;
+        }
+
+        .solution-visual {
+            background: #f7fafc;
+            border-radius: 16px;
+            padding: 60px 40px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .ai-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #3182ce, #2c5aa0);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 3rem;
+            color: white;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .solution-visual h3 {
+            color: #2d3748;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .solution-visual p {
+            color: #718096;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: #f7fafc;
+            padding: 80px 60px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+        }
+
+        .benefit-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #3182ce;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+
+        .benefit-card p {
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            background: #2d3748;
+            color: white;
+            padding: 80px 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .final-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .final-cta .cta-button {
+            margin-bottom: 40px;
+            background: #3182ce;
+        }
+
+        .final-cta .cta-button:hover {
+            background: #2c5aa0;
+        }
+
+        .contact-info {
+            margin-top: 40px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: #90cdf4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            color: #bee3f8;
+            text-decoration: underline;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: white;
+            padding: 40px 60px;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #3182ce;
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            color: #718096;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero, .problem, .solution, .benefits, .final-cta {
+                padding: 60px 30px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .solution-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .stats-bar {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>AI Packaging System</h1>
+                <p>Automatisiere deine E-Commerce Verpackung mit intelligenter KI-Technologie und reduziere Kosten um bis zu 40%</p>
+                <a href="#contact" class="cta-button">Kostenlose Demo anfragen</a>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <section class="stats-bar">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>75%</h3>
+                    <p>Zeitersparnis</p>
+                </div>
+                <div class="stat-item">
+                    <h3>40%</h3>
+                    <p>Kostensenkung</p>
+                </div>
+                <div class="stat-item">
+                    <h3>95%</h3>
+                    <p>Genauigkeit</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Verfügbarkeit</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="problem">
+            <h2 class="section-title">Die Herausforderung</h2>
+            <p class="section-subtitle">
+                E-Commerce Shops verlieren täglich Zeit und Geld durch ineffiziente Verpackungsprozesse
+            </p>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">⏰</div>
+                    <h3>Zeitverschwendung</h3>
+                    <p>Manuelle Verpackungsauswahl kostet durchschnittlich 3-5 Minuten pro Bestellung und bindet wertvolle Ressourcen</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">💸</div>
+                    <h3>Hohe Kosten</h3>
+                    <p>Falsche Verpackungsgrößen führen zu 30% mehr Versandkosten durch ineffiziente Raumnutzung</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">❌</div>
+                    <h3>Fehlerquote</h3>
+                    <p>Menschliche Fehler bei der Verpackungsauswahl in 15% aller Fälle führen zu Reklamationen</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="solution">
+            <div class="solution-content">
+                <div class="solution-text">
+                    <h2>Unsere KI-Lösung</h2>
+                    <p>Intelligente Automatisierung für perfekte Verpackungsentscheidungen in Echtzeit. Unser System analysiert Produktdimensionen und wählt automatisch die optimale Verpackung.</p>
+                    
+                    <ul class="solution-features">
+                        <li>Automatische Produktanalyse und Größenerkennung</li>
+                        <li>Optimale Verpackungsauswahl in Millisekunden</li>
+                        <li>Nahtlose Integration in bestehende E-Commerce Systeme</li>
+                        <li>Kontinuierliches Lernen und Optimierung</li>
+                        <li>Nachhaltigkeitsoptimierung durch weniger Materialverbrauch</li>
+                        <li>Detaillierte Analytics und Reporting</li>
+                    </ul>
+                </div>
+                
+                <div class="solution-visual">
+                    <div class="ai-icon">🤖</div>
+                    <h3>Smart AI Engine</h3>
+                    <p>Analysiert Produktdimensionen, entscheidet optimal und optimiert kontinuierlich deine Verpackungsprozesse</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits">
+            <h2 class="section-title" style="text-align: center;">Deine Vorteile</h2>
+            <p class="section-subtitle" style="text-align: center;">
+                Konkrete Verbesserungen für dein E-Commerce Business
+            </p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-number">75%</div>
+                    <h3>Zeitersparnis</h3>
+                    <p>Reduziere Verpackungszeit um bis zu 75% durch vollautomatische Prozesse ohne manuelle Eingriffe</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">40%</div>
+                    <h3>Kostensenkung</h3>
+                    <p>Senke Versandkosten durch optimale Verpackungsgrößenauswahl und reduzierte Materialverschwendung</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">95%</div>
+                    <h3>Genauigkeit</h3>
+                    <p>Minimiere Fehler durch präzise KI-basierte Entscheidungen und maschinelles Lernen</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">ROI</div>
+                    <h3>Schnelle Amortisation</h3>
+                    <p>Typischerweise amortisiert sich die Investition bereits nach 3-6 Monaten</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="final-cta">
+            <h2>Bereit für die Zukunft?</h2>
+            <p>
+                Revolutioniere dein E-Commerce Business mit intelligenter Verpackungsautomatisierung. Starte noch heute mit einer kostenlosen Demo.
+            </p>
+            <a href="#contact" class="cta-button">Kostenlose Beratung vereinbaren</a>
+            
+            <div class="contact-info" id="contact">
+                <p>📧 E-Mail: <a href="mailto:info@ai-packaging.de">info@ai-packaging.de</a></p>
+                <p>📱 Telefon: <a href="tel:+491234567890">+49 123 456 7890</a></p>
+                <p>🌐 Website: <a href="https://ai-packaging.de">www.ai-packaging.de</a></p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and animated elements
+        document.querySelectorAll('.problem-card, .benefit-card, .solution-visual, .stat-item').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-item h3');
+            counters.forEach(counter => {
+                const target = counter.getAttribute('data-target') || counter.innerText;
+                if (target.includes('%')) {
+                    const number = parseInt(target);
+                    animateNumber(counter, 0, number, '%');
+                }
+            });
+        }
+
+        function animateNumber(element, start, end, suffix = '') {
+            const duration = 2000;
+            const range = end - start;
+            const increment = range / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= end) {
+                    current = end;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current) + suffix;
+            }, 16);
+        }
+
+        // Trigger counter animation when stats section is visible
+        const statsSection = document.querySelector('.stats-bar');
+        if (statsSection) {
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            statsObserver.observe(statsSection);
+        }
+    </script>
+</body>
+</html>
