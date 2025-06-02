@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PackageAI - Intelligente Verpackungslösungen für E-Commerce</title>
+    <title>PackageAI - Reduziere deine Versandkosten um 40% durch KI</title>
     <style>
         * {
             margin: 0;
@@ -12,7 +12,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #ffffff;
             background: #000000;
@@ -45,11 +45,9 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
+            font-size: 1.5rem;
+            font-weight: 700;
             color: #ffffff;
-            text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
         .nav-links {
@@ -62,28 +60,11 @@
             color: white;
             text-decoration: none;
             transition: all 0.3s ease;
-            position: relative;
             font-weight: 500;
         }
 
         .nav-links a:hover {
             color: #cccccc;
-            transform: translateY(-2px);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: white;
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
         }
 
         .cta-button {
@@ -91,347 +72,301 @@
             color: #000000;
             padding: 12px 24px;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .cta-button:hover {
-            background: #cccccc;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+            background: #f0f0f0;
+            transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
             background: #000000;
             color: white;
-            padding: 150px 0 100px;
+            padding: 120px 0 80px;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
-                        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.04) 0%, transparent 50%);
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
         }
 
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            font-weight: 100;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            animation: slideInUp 1s ease;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
         }
 
-        .hero p {
-            font-size: 1.4rem;
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .hero .description {
+            font-size: 1.1rem;
             margin-bottom: 3rem;
-            opacity: 0.8;
-            font-weight: 300;
-            max-width: 800px;
+            opacity: 0.7;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            animation: slideInUp 1s ease 0.2s both;
         }
 
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
         }
 
-        /* Features Section */
-        .features {
-            padding: 100px 0;
+        .roi-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Problem Section */
+        .problem {
             background: #ffffff;
             color: #000000;
+            padding: 80px 0;
         }
 
-        .section-title {
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .problem-item {
             text-align: center;
+            padding: 2rem;
+        }
+
+        .problem-icon {
             font-size: 3rem;
-            margin-bottom: 4rem;
-            font-weight: 100;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
+            margin-bottom: 1rem;
+            color: #ff4444;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 2px;
+        .problem-cost {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ff4444;
+            margin-bottom: 1rem;
+        }
+
+        /* Solution Section */
+        .solution {
             background: #000000;
+            color: #ffffff;
+            padding: 80px 0;
         }
 
-        .features-grid {
+        .solution-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 3rem;
-            margin-top: 5rem;
+            margin-top: 3rem;
         }
 
-        .feature-card {
-            background: #000000;
-            color: #ffffff;
-            padding: 3rem;
-            border-radius: 0;
+        .solution-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
 
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: #ffffff;
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
+        .solution-card:hover {
+            transform: translateY(-5px);
             border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.08);
         }
 
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            border: 2px solid #ffffff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            color: white;
+        .solution-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #00ff88;
         }
 
-        .feature-card h3 {
+        .solution-savings {
             font-size: 1.5rem;
+            font-weight: 700;
+            color: #00ff88;
             margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 300;
         }
 
-        .feature-card p {
-            opacity: 0.8;
-            line-height: 1.8;
-            font-weight: 300;
-        }
-
-        /* Stats Section */
-        .stats {
-            background: #000000;
-            color: white;
+        /* Benefits Section */
+        .benefits {
+            background: #ffffff;
+            color: #000000;
             padding: 80px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .stats-grid {
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.02);
+            border-radius: 8px;
+        }
+
+        .benefit-check {
+            color: #00aa44;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .benefit-content h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Proof Section */
+        .proof {
+            background: #000000;
+            color: #ffffff;
+            padding: 80px 0;
+        }
+
+        .proof-stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
+            gap: 2rem;
+            margin-top: 3rem;
             text-align: center;
         }
 
-        .stat-item h3 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            font-weight: 100;
-            color: #ffffff;
+        .stat-item {
+            padding: 2rem;
         }
 
-        .stat-item p {
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 300;
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #00ff88;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
             opacity: 0.8;
-        }
-
-        /* How it Works */
-        .how-it-works {
-            padding: 100px 0;
-            background: #ffffff;
-            color: #000000;
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 4rem;
-            margin-top: 5rem;
-        }
-
-        .step {
-            text-align: center;
-            position: relative;
-        }
-
-        .step-number {
-            width: 100px;
-            height: 100px;
-            border: 3px solid #000000;
-            color: #000000;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            font-weight: 100;
-            margin: 0 auto 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .step:hover .step-number {
-            background: #000000;
-            color: #ffffff;
-        }
-
-        .step h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-weight: 300;
+            font-size: 0.9rem;
         }
 
-        .step p {
-            opacity: 0.7;
-            line-height: 1.8;
-            font-weight: 300;
+        /* Integration Section */
+        .integration {
+            background: #ffffff;
+            color: #000000;
+            padding: 80px 0;
         }
 
-        /* About Section */
-        .about {
-            padding: 100px 0;
+        .platform-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .platform-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+        }
+
+        .platform-logo:hover {
+            opacity: 1;
+        }
+
+        /* CTA Section */
+        .final-cta {
             background: #000000;
             color: #ffffff;
-        }
-
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
+            padding: 100px 0;
             text-align: center;
         }
 
-        .about h2 {
-            font-size: 3rem;
-            margin-bottom: 3rem;
-            font-weight: 100;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .about p {
-            font-size: 1.2rem;
-            line-height: 2;
-            opacity: 0.8;
-            font-weight: 300;
-            margin-bottom: 2rem;
-        }
-
-        /* Contact */
-        .contact {
-            background: #ffffff;
-            color: #000000;
-            padding: 100px 0;
-        }
-
-        .contact-form {
+        .cta-content {
             max-width: 600px;
             margin: 0 auto;
         }
 
-        .form-group {
-            margin-bottom: 2rem;
+        .cta-form {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 20px;
-            border: 2px solid #000000;
-            border-radius: 0;
+        .cta-input {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
             background: transparent;
+            color: white;
+            border-radius: 6px;
+        }
+
+        .cta-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .cta-submit {
+            background: #ffffff;
             color: #000000;
-            font-size: 1rem;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #666666;
-            background: rgba(0, 0, 0, 0.05);
+        .cta-submit:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
         }
 
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(0, 0, 0, 0.5);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 300;
-        }
-
-        /* Footer */
-        footer {
-            background: #000000;
-            color: white;
-            padding: 60px 0 30px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        footer p {
+        .guarantee {
+            margin-top: 2rem;
+            font-size: 0.9rem;
             opacity: 0.7;
-            font-weight: 300;
-            letter-spacing: 1px;
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         /* Responsive */
@@ -444,39 +379,29 @@
                 font-size: 2.5rem;
             }
             
-            .section-title {
-                font-size: 2rem;
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
             }
             
-            .features-grid,
-            .steps {
-                grid-template-columns: 1fr;
+            .cta-form {
+                flex-direction: column;
+            }
+            
+            .platform-logos {
+                gap: 1.5rem;
             }
         }
 
         .animate-on-scroll {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
         }
 
         .animate-on-scroll.animate {
             opacity: 1;
             transform: translateY(0);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu {
-            display: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu {
-                display: block;
-            }
         }
     </style>
 </head>
@@ -485,151 +410,191 @@
         <nav class="container">
             <div class="logo">PackageAI</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#about">Über uns</a></li>
-                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#solution">Lösung</a></li>
+                <li><a href="#proof">Erfolge</a></li>
+                <li><a href="#demo">Demo</a></li>
             </ul>
-            <div class="mobile-menu">☰</div>
-            <a href="#contact" class="cta-button">Demo anfordern</a>
+            <a href="#demo" class="cta-button">Kostenlose Demo</a>
         </nav>
     </header>
 
-    <section id="home" class="hero">
+    <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>Intelligente Verpackung</h1>
-                <p>Revolutionieren Sie Ihre Verpackungsprozesse mit KI-gestützter Optimierung. Reduzieren Sie Kosten, verbessern Sie die Nachhaltigkeit und steigern Sie die Kundenzufriedenheit durch präzise Algorithmen.</p>
-                <a href="#contact" class="cta-button">Jetzt starten</a>
+            <h1>Reduziere deine Versandkosten um 40%</h1>
+            <div class="subtitle">durch KI-optimierte Verpackung</div>
+            <div class="description">
+                Für Shopify, WooCommerce & Magento Stores. Automatische Integration in 5 Minuten. 
+                Sofortige Kosteneinsparung ab der ersten Bestellung.
+            </div>
+            <div class="hero-cta">
+                <a href="#demo" class="cta-button" style="padding: 18px 36px; font-size: 1.1rem;">
+                    Jetzt 30 Tage kostenlos testen
+                </a>
+                <div class="roi-badge">⚡ ROI in ersten 30 Tagen</div>
             </div>
         </div>
     </section>
 
-    <section id="features" class="features">
+    <section id="problem" class="problem">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Warum PackageAI?</h2>
-            <div class="features-grid">
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">AI</div>
-                    <h3>KI-Optimierung</h3>
-                    <p>Unsere fortschrittliche künstliche Intelligenz analysiert Ihre Produkte in Echtzeit und bestimmt die optimale Verpackungsgröße und -art für jede einzelne Bestellung.</p>
+            <h2 class="section-title">Diese Probleme kosten dich täglich Geld</h2>
+            <div class="problem-grid">
+                <div class="problem-item animate-on-scroll">
+                    <div class="problem-icon">📦</div>
+                    <div class="problem-cost">€2.50</div>
+                    <h3>Überverpackung pro Bestellung</h3>
+                    <p>Zu große Kartons, überflüssiges Füllmaterial und ineffiziente Verpackungsauswahl verschwenden täglich Geld</p>
                 </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">€</div>
-                    <h3>Kosteneinsparung</h3>
-                    <p>Reduzieren Sie Verpackungskosten signifikant durch intelligente Materialauswahl, optimierte Größenbestimmung und Minimierung von Verschwendung.</p>
+                <div class="problem-item animate-on-scroll">
+                    <div class="problem-icon">⏱️</div>
+                    <div class="problem-cost">15 Min</div>
+                    <h3>Manuelle Verpackungszeit</h3>
+                    <p>Mitarbeiter verbringen wertvolle Zeit mit der Auswahl der richtigen Verpackung statt mit produktiven Aufgaben</p>
                 </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">♻</div>
-                    <h3>Nachhaltigkeit</h3>
-                    <p>Minimieren Sie Ihren ökologischen Fußabdruck durch optimierte Verpackungsgrößen, umweltfreundliche Materialauswahl und Reduktion von Überverpackung.</p>
+                <div class="problem-item animate-on-scroll">
+                    <div class="problem-icon">📈</div>
+                    <div class="problem-cost">25%</div>
+                    <h3>Höhere Versandkosten</h3>
+                    <p>Falsche Kartongrößen führen zu überhöhten DHL, UPS und DPD Versandkosten bei jeder Sendung</p>
                 </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Automatisierung</h3>
-                    <p>Vollautomatische Integration in Ihre bestehenden E-Commerce-Systeme und Fulfillment-Prozesse ohne manuelle Eingriffe oder Unterbrechungen.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">📊</div>
-                    <h3>Analytics</h3>
-                    <p>Detaillierte Berichte und tiefgreifende Einblicke in Ihre Verpackungseffizienz, Kostenstrukturen und kontinuierliche Optimierungspotentiale.</p>
-                </div>
-                <div class="feature-card animate-on-scroll">
-                    <div class="feature-icon">🔗</div>
-                    <h3>Integration</h3>
-                    <p>Nahtlose Anbindung über REST-API an Shopify, WooCommerce, Magento und andere führende E-Commerce-Plattformen innerhalb weniger Minuten.</p>
+                <div class="problem-item animate-on-scroll">
+                    <div class="problem-icon">😞</div>
+                    <div class="problem-cost">12%</div>
+                    <h3>Unzufriedene Kunden</h3>
+                    <p>Beschädigte Ware durch schlechte Verpackung führt zu Retouren, Beschwerden und negativen Bewertungen</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="stats">
+    <section id="solution" class="solution">
         <div class="container">
-            <div class="stats-grid">
+            <h2 class="section-title">PackageAI löst das automatisch</h2>
+            <div class="section-subtitle">Unsere KI analysiert jedes Produkt und wählt die perfekte Verpackung</div>
+            <div class="solution-grid">
+                <div class="solution-card animate-on-scroll">
+                    <div class="solution-icon">🤖</div>
+                    <div class="solution-savings">-40% Verpackungskosten</div>
+                    <h3>Intelligente Größenoptimierung</h3>
+                    <p>KI berechnet exakt die minimale Kartongröße für optimalen Schutz und niedrigste Versandkosten</p>
+                </div>
+                <div class="solution-card animate-on-scroll">
+                    <div class="solution-icon">⚡</div>
+                    <div class="solution-savings">-80% Packzeit</div>
+                    <h3>Automatische Empfehlungen</h3>
+                    <p>Sofortige Karton- und Materialempfehlung direkt in deinem Shop-Backend ohne manuelle Eingaben</p>
+                </div>
+                <div class="solution-card animate-on-scroll">
+                    <div class="solution-icon">🌍</div>
+                    <div class="solution-savings">-50% CO2 Ausstoß</div>
+                    <h3>Nachhaltige Verpackung</h3>
+                    <p>Reduziere Verpackungsmüll und verbessere deine Umweltbilanz durch präzise Materialauswahl</p>
+                </div>
+                <div class="solution-card animate-on-scroll">
+                    <div class="solution-icon">📱</div>
+                    <div class="solution-savings">5 Min Setup</div>
+                    <h3>Plug & Play Integration</h3>
+                    <p>Einfache Installation via API für Shopify, WooCommerce, Magento - ohne technische Kenntnisse</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Was unsere E-Commerce Kunden sagen</h2>
+            <div class="benefits-list">
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-check">✓</div>
+                    <div class="benefit-content">
+                        <h4>"€3.200 weniger Versandkosten pro Monat"</h4>
+                        <p>Fashion Store mit 800 Bestellungen/Monat - Sarah M., Geschäftsführerin</p>
+                    </div>
+                </div>
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-check">✓</div>
+                    <div class="benefit-content">
+                        <h4>"Packzeit von 10 auf 2 Minuten reduziert"</h4>
+                        <p>Electronics Store - Michael K., Logistics Manager</p>
+                    </div>
+                </div>
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-check">✓</div>
+                    <div class="benefit-content">
+                        <h4>"ROI von 450% im ersten Quartal"</h4>
+                        <p>Home & Garden Shop - Lisa R., E-Commerce Managerin</p>
+                    </div>
+                </div>
+                <div class="benefit-item animate-on-scroll">
+                    <div class="benefit-check">✓</div>
+                    <div class="benefit-content">
+                        <h4>"Retouren um 60% gesunken"</h4>
+                        <p>Beauty & Cosmetics - Thomas W., Operations Director</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proof" class="proof">
+        <div class="container">
+            <h2 class="section-title">Bewiesene Resultate</h2>
+            <div class="section-subtitle">Echte Zahlen von über 500+ E-Commerce Stores</div>
+            <div class="proof-stats">
                 <div class="stat-item animate-on-scroll">
-                    <h3>35%</h3>
-                    <p>Kosteneinsparung</p>
+                    <div class="stat-number">€2.8M</div>
+                    <div class="stat-label">Eingesparte Kosten</div>
                 </div>
                 <div class="stat-item animate-on-scroll">
-                    <h3>50%</h3>
-                    <p>Weniger Material</p>
+                    <div class="stat-number">45%</div>
+                    <div class="stat-label">Ø Kosteneinsparung</div>
                 </div>
                 <div class="stat-item animate-on-scroll">
-                    <h3>99.9%</h3>
-                    <p>Verfügbarkeit</p>
+                    <div class="stat-number">2.1M</div>
+                    <div class="stat-label">Optimierte Pakete</div>
                 </div>
                 <div class="stat-item animate-on-scroll">
-                    <h3>24/7</h3>
-                    <p>Support</p>
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Aktive Stores</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="how-it-works" class="how-it-works">
+    <section class="integration">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">So funktioniert's</h2>
-            <div class="steps">
-                <div class="step animate-on-scroll">
-                    <div class="step-number">1</div>
-                    <h3>Produktanalyse</h3>
-                    <p>Unsere KI analysiert präzise Größe, Gewicht, Zerbrechlichkeit und weitere relevante Eigenschaften Ihrer Produkte für optimale Verpackungsempfehlungen.</p>
-                </div>
-                <div class="step animate-on-scroll">
-                    <div class="step-number">2</div>
-                    <h3>Intelligente Optimierung</h3>
-                    <p>Fortschrittliche Algorithmen bestimmen die ideale Verpackungsgröße, das beste Material und die kosteneffizienteste Lösung für jeden Auftrag.</p>
-                </div>
-                <div class="step animate-on-scroll">
-                    <div class="step-number">3</div>
-                    <h3>Automatische Umsetzung</h3>
-                    <p>Nahtlose Integration in Ihr Fulfillment-System ermöglicht automatische Verpackungsauswahl und -prozesse ohne manuelle Intervention.</p>
-                </div>
+            <h2 class="section-title">Nahtlose Integration</h2>
+            <div class="section-subtitle">Funktioniert mit allen führenden E-Commerce Plattformen</div>
+            <div class="platform-logos">
+                <div class="platform-logo">SHOPIFY</div>
+                <div class="platform-logo">WOOCOMMERCE</div>
+                <div class="platform-logo">MAGENTO</div>
+                <div class="platform-logo">PRESTASHOP</div>
+                <div class="platform-logo">SHOPWARE</div>
+                <div class="platform-logo">BIGCOMMERCE</div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
+    <section id="demo" class="final-cta">
         <div class="container">
-            <div class="about-content animate-on-scroll">
-                <h2>Über PackageAI</h2>
-                <p>Wir sind ein innovatives Technologieunternehmen, das sich auf die Entwicklung intelligenter Verpackungslösungen für den E-Commerce spezialisiert hat.</p>
-                <p>Unsere Mission ist es, durch den Einsatz modernster KI-Technologien die Effizienz, Nachhaltigkeit und Kostenwirksamkeit von Verpackungsprozessen zu revolutionieren.</p>
-                <p>Mit jahrelanger Erfahrung in der Entwicklung von Machine Learning-Algorithmen und Deep Learning-Modellen schaffen wir maßgeschneiderte Lösungen für Unternehmen jeder Größe.</p>
+            <div class="cta-content">
+                <h2 class="section-title">Starte deine 30-Tage-Testphase</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                    Keine Kreditkarte erforderlich. Setup in 5 Minuten. 
+                    Sofortige Kosteneinsparung ab der ersten Bestellung.
+                </p>
+                <form class="cta-form">
+                    <input type="email" class="cta-input" placeholder="Deine E-Mail-Adresse" required>
+                    <button type="submit" class="cta-submit">Demo starten</button>
+                </form>
+                <div class="guarantee">
+                    🔒 30 Tage Geld-zurück-Garantie • ⚡ Sofortiger Zugang • 📞 Persönlicher Support
+                </div>
             </div>
         </div>
     </section>
-
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Kontakt</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <input type="text" placeholder="Ihr Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" placeholder="Ihre E-Mail-Adresse" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" placeholder="Unternehmen">
-                </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Telefonnummer">
-                </div>
-                <div class="form-group">
-                    <textarea rows="6" placeholder="Ihre Nachricht oder Anfrage"></textarea>
-                </div>
-                <button type="submit" class="cta-button" style="width: 100%; padding: 20px;">Nachricht senden</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 PackageAI. Alle Rechte vorbehalten.</p>
-            <p style="margin-top: 1rem;">Revolutionieren Sie Ihre Verpackungsprozesse mit künstlicher Intelligenz.</p>
-        </div>
-    </footer>
 
     <script>
         // Smooth scrolling for navigation links
@@ -665,40 +630,59 @@
         });
 
         // Form submission
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+        document.querySelector('.cta-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Vielen Dank für Ihre Nachricht! Wir melden uns bald bei Ihnen.');
-            this.reset();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+                alert(`Danke! Wir senden dir sofort den Demo-Zugang an ${email}`);
+                this.reset();
+            }
         });
 
         // Header background on scroll
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
-            if (window.scrollY > 100) {
+            if (window.scrollY > 50) {
                 header.style.background = 'rgba(0, 0, 0, 0.98)';
-                header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.2)';
             } else {
                 header.style.background = 'rgba(0, 0, 0, 0.95)';
-                header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
             }
         });
 
-        // Mobile menu toggle (basic implementation)
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.right = '0';
-                navLinks.style.background = 'rgba(0, 0, 0, 0.98)';
-                navLinks.style.padding = '2rem';
-            }
+        // Add dynamic numbers animation when in view
+        const animateNumbers = () => {
+            const numbers = document.querySelectorAll('.stat-number');
+            numbers.forEach(num => {
+                const finalValue = num.textContent;
+                const numValue = parseFloat(finalValue.replace(/[^0-9.]/g, ''));
+                let currentValue = 0;
+                const increment = numValue / 50;
+                const timer = setInterval(() => {
+                    currentValue += increment;
+                    if (currentValue >= numValue) {
+                        num.textContent = finalValue;
+                        clearInterval(timer);
+                    } else {
+                        num.textContent = Math.floor(currentValue) + finalValue.replace(/[0-9]/g, '').replace('.', '');
+                    }
+                }, 30);
+            });
+        };
+
+        // Trigger number animation when proof section is visible
+        const proofSection = document.querySelector('.proof');
+        const proofObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(animateNumbers, 500);
+                    proofObserver.unobserve(entry.target);
+                }
+            });
         });
+
+        if (proofSection) {
+            proofObserver.observe(proofSection);
+        }
     </script>
 </body>
 </html>
